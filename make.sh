@@ -2,9 +2,15 @@
 set -euo pipefail
 set -x
 
+build="build"
 src="html/index.html"
-dest="index.html"
-repo="binpash/benchmarks"
+dest="$build/index.html"
+repo="kben-sh/benchmarks"
+
+mkdir -p "$build"
+cp -r img "$build"
+cp -r css "$build"
+cp -r js "$build"
 
 header_content=$(<"header.html")
 footer_content=$(<"footer.html")
