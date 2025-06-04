@@ -19,6 +19,11 @@ version=$(curl -s "https://api.github.com/repos/$repo/tags" | jq -r '.[0].name' 
 revision=$(curl -s "https://api.github.com/repos/$repo/commits" | jq -r '.[0].sha' | cut -c1-7 || echo "unknown")
 commitmsg=$(curl -s "https://api.github.com/repos/$repo/commits/$revision" | jq -r '.commit.message' || echo "unknown")
 
+for md in md/*.md; do
+  html=$(basename "$md" .md).html
+  pandoc "$md" --standalone --from markdown --to html5 --output "$build/$html"
+done
+
 pandoc "$src"                         \
   --standalone                        \
   --from html                         \
