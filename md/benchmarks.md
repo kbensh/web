@@ -3,7 +3,7 @@
 | Benchmark   | Description                                                                 |
 |-------------|-----------------------------------------------------------------------------|
 | `analytics`   | processes real-world network logs to extract and summarize key events.      |
-| `bio`         | performs genomic and transcriptomic analysis using population and rna-seq data. |
+| `bio`         | performs genomic and transcriptomic analysis using population and RNA-seq data. |
 | `ci-cd`       | builds and tests open-source software projects.     |
 | `covid`       | analyzes public transit activity during the covid-19 pandemic.              |
 | `file-mod`    | compresses, encrypts, and converts various file formats.                    |
