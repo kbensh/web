@@ -15,7 +15,7 @@
             <h1 class="title">Koala<sup><sup><a href="https://github.com/kbensh/benchmarks/releases"
                         class="top-version">$version$</a></sup></sup></h1>
             <div class="navigation">
-                <a class="self" href="./index">main</a> /
+                <a href="./index.html">main</a> /
                 <a href="./data.html">data</a> /
                 <a href="http://github.com/kbensh/benchmarks">github</a>
             </div>
@@ -53,21 +53,13 @@ $body$
 </html>
 
 <script>
-  const tabs = document.querySelectorAll('.tab');
-  const codeBlocks = document.querySelectorAll('.code-block');
+  const links = document.querySelectorAll('.navigation a');
+  const current = window.location.pathname.split('/').pop() || 'index';
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.target;
-
-      // Switch active tab
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Show correct code block
-      codeBlocks.forEach(block => {
-        block.classList.toggle('active', block.dataset.tab === target);
-      });
-    });
+  links.forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === current || (href === 'index' && current === '')) {
+      link.classList.add('self');
+    }
   });
 </script>
