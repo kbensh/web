@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+set -x
 
 build="build"
 template="html/template.html"
-repo="kbensh/benchmarks"
+repo="kbensh/koala"
 
 mkdir -p "$build"
 cp -r img "$build"
@@ -14,17 +15,19 @@ version=$(curl -s "https://api.github.com/repos/$repo/tags" | jq -r '.[0].name' 
 revision=$(curl -s "https://api.github.com/repos/$repo/commits" | jq -r '.[0].sha' | cut -c1-7 || echo "unknown")
 commitmsg=$(curl -s "https://api.github.com/repos/$repo/commits/$revision" | jq -r '.commit.message' || echo "unknown")
 
-for md in md/*.md; do
-  html=$(basename "$md" .md).html
-  pandoc "$md" --standalone --from markdown --to html5 --template="$template" --output "$build/$html"
-done
-
 cp html/* build/
 
-buildhtml() {
+buildthing() {
+  # suffix is .md build from markdown
+  case "$1" in
+    *.md)  from=markdown ;;
+    *.html) from=html ;;
+    *) echo "Unknown file type: $1"; exit 1 ;;
+  esac
+
   pandoc "$1"                           \
     --standalone                        \
-    --from html                     \
+    --from "$from"                      \
     --template "$template"              \
     --to html5                          \
     --variable title="kben.sh"          \
@@ -35,6 +38,7 @@ buildhtml() {
     --output "$2"
 }
 
-buildhtml "html/index.html" "$build/index.html"
+buildthing "html/index.html" "$build/index.html"
+buildthing "md/data.md"      "$build/data.html"
 
 echo "$(date)": "Built website!"
