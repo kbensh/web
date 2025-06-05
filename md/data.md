@@ -1,7 +1,7 @@
 
 # Online Appendix I: All Inputs
 
-The table below contains all links to the inputs. AEC reviewers: Some of these inputs are extremely large and hosted on low-bandwidth permanent-storage services such as Zenodo. To confirm existence, simply click on the URL to to start a download and then stop downloading a few seconds later.
+The table below contains all links to the inputs. Note: Some of these inputs are extremely large and hosted on low-bandwidth permanent-storage services such as Zenodo.
 
 | Benchmark       | Min                                                                                                   | Small                                                                                                             | Full                                                                                                                                     |
 | --------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
