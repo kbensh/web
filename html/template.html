@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>$title$</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="column">
+            <h1 class="title">Koala<sup><sup><a href="https://github.com/kbensh/benchmarks/releases"
+                        class="top-version">$version$</a></sup></sup></h1>
+            <div class="navigation">
+                <a class="self" href="./index">main</a> /
+                <a href="./data.html">data</a> /
+                <a href="http://github.com/kbensh/benchmarks">github</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+$body$
+    </main>
+
+    <footer>
+        <table border="0" class="foot">
+            <tr class="foot">
+                <td align="left" class="foot">
+                    version <a href="http://github.com/kbensh/pash/releases/tag/v$version$">$version$</a> | revision <a
+                        href="http://github.com/kbensh/benchmarks"> $revision$ </a> | $commitmsg$ | Updated: $updated$
+                </td>
+                <td align="right" class="foot">
+                    <img src="https://img.shields.io/badge/status-OK-red.svg?style=flat" alt="Status OK">
+                </td>
+            </tr>
+            <tr class="foot">
+                <td align="left" class="foot">
+                    <br>
+                    Copyright PaSh Project a Series of LF Projects, LLC. For website
+                    terms of use, privacy policy, trademark <br>guidelines and other policies
+                    please see <a href="https://www.lfprojects.org/policies/">www.lfprojects.org/policies</a>.
+                </td>
+            </tr>
+        </table>
+    </footer>
+
+</body>
+
+</html>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const codeBlocks = document.querySelectorAll('.code-block');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.target;
+
+      // Switch active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // Show correct code block
+      codeBlocks.forEach(block => {
+        block.classList.toggle('active', block.dataset.tab === target);
+      });
+    });
+  });
+</script>
