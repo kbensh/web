@@ -3,7 +3,7 @@
 body {
     margin: 0 auto;
     padding: 0 15px;
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 17px;
     font-weight: 400;
     color: #333;
@@ -62,6 +62,9 @@ header {
 
 .navigation {
   float: right;
+  line-height: 1;
+  white-space: nowrap;
+  margin-right: 10%;
 }
 
 /*
@@ -83,7 +86,7 @@ a.self, a.self:hover, a.self:focus {
 }
 
 h1, h2, h3, h4, h5, h6, nav, #versioninfo {
-    font-family: "Roboto",  Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #333;
@@ -110,14 +113,17 @@ h1 {
 
 /** I will probably add these verbatim for the Latex and Html versions*/
 h1.title {
-    font-size: 65px;
-    font-weight: 100;
-    margin-right: 20px;
-    margin-top: 0px;
-    margin-bottom: 40px; /*leave some space under*/
+    font-size: 72px;
+    font-weight: 400;
+    font-family: 'Georgia', 'Baskerville', 'Times New Roman', serif;
+    margin: 0 20px 20px 0;
     text-align: left;
-    border-left: 6px solid #cb4b16;
-    padding: .1em .1em;
+
+    /* Gradient fill */
+    background: linear-gradient(to top, #005c5c, #0d1a26);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 }
 
 a.top-version {
@@ -127,6 +133,7 @@ a.top-version {
   border: 1px #cb4b16 solid;
   overflow: hidden;
   background-color: #cb4b16;
+  font-family: "Arial", serif;
 }
 
 h1.subtitle {
@@ -199,13 +206,13 @@ h6 {
     }
 }
 
-nav {
-    column-count: 2;
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    font-size: 15px;
-    margin: 0 0 1em 0;
+.column {
+    display: flex;
+    align-items: center; /* vertically center children */
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
+
 p {
     margin: 0 0 1em 0;
 }
@@ -265,7 +272,7 @@ pre.wip {
 }
 
 pre.wip code {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: Arial, sans-serif;
     color: white;
     background: #cb4b16;
 }
@@ -386,7 +393,6 @@ a {
     background: transparent;
 }
 a:hover, a:focus {
-    color: #cb4b16;
     text-decoration: underline;
 }
 a:focus {
@@ -398,9 +404,6 @@ a:hover, a:active {
     outline: 0;
 }
 
-h1 a:link, h1 a:visited, h2 a:link, h2 a:visited,
-h3 a:link, h3 a:visited, h4 a:link, h4 a:visited,
-h5 a:link, h5 a:visited {color: black;}
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover,
 h5 a:hover {text-decoration: none;}
 
@@ -711,11 +714,6 @@ code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
 code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
 code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-
-/* Force scrollbars onto browser window */
-body {
-    margin-bottom: 200%;
-}
 
 /* Box styles */
 .myBox {
