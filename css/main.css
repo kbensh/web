@@ -111,41 +111,31 @@ h1 {
     /*border-bottom: .1px solid #888;*/
 }
 
-/** I will probably add these verbatim for the Latex and Html versions*/
-h1.title {
-    font-size: 72px;
-    font-weight: 400;
-    font-family: 'Georgia', 'Baskerville', 'Times New Roman', serif;
-    margin: 0 20px 20px 0;
-    text-align: left;
-
-    /* Gradient fill */
-    background: linear-gradient(to top, #005c5c, #0d1a26);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+.title {
+  position: relative;
+  font-family: monospace;
+  white-space: pre; /* Preserve line breaks and spaces */
+  font-weight: bold;
+  font-size: 9px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0;
+  border-left: 4px solid #cb4b16;
+  padding-left: 12px;
 }
 
-a.top-version {
-  font-size: 15px;
-  color: white;
-  border-radius:5px;
-  border: 1px #cb4b16 solid;
-  overflow: hidden;
-  background-color: #cb4b16;
-  font-family: "Arial", serif;
+.top-version {
+  font-size: 1.1em;
+  margin-left: 150px;
 }
 
-h1.subtitle {
-    font-size: 25px;
-    font-weight: 100;
-    margin-right: 20px;
-    margin-top: 0px;
-    margin-top: -40px; /*if attached under title, lift to cover empty space*/
-    margin-bottom: 40px; /*leave some space under*/
-    text-align: left;
-    border-left: 6px solid #cb4b16;
-    padding: .1em .3em;
+.subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0;
+  margin-top: 5px;     /* spacing below h1 */
+  margin-left: 20px;   /* indent to the right */
 }
 
 h2.author {

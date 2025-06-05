@@ -16,6 +16,7 @@ revision=$(curl -s "https://api.github.com/repos/$repo/commits" | jq -r '.[0].sh
 commitmsg=$(curl -s "https://api.github.com/repos/$repo/commits/$revision" | jq -r '.commit.message' || echo "unknown")
 
 cp html/* build/
+logo=$(<./txt/koala.txt)
 
 buildthing() {
   # suffix is .md build from markdown
@@ -31,6 +32,7 @@ buildthing() {
     --template "$template"              \
     --to html5                          \
     --variable title="kben.sh"          \
+    --variable logo="$logo"             \
     --variable version="$version"       \
     --variable revision="$revision"     \
     --variable updated="$updated"       \
