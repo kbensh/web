@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!resp.ok) throw new Error(`GitHub API error: ${resp.status}`);
     const issues = await resp.json();
 
-    const ul = document.getElementById('help-wanted-issues');
+    const div = document.getElementById('help-wanted-issues');
+    const ul = div.querySelector('ul');
     issues.forEach(issue => {
       const li = document.createElement('li');
       const a  = document.createElement('a');
