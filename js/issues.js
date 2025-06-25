@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
   const repo = 'kbensh/koala';
-  const perPage = 4;
+  const perPage = 3;
   const issuesUrl = `https://api.github.com/repos/${repo}/issues?state=open&sort=created&direction=desc&per_page=${perPage}`;
 
   try {
