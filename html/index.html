@@ -17,12 +17,41 @@ This suite evolves to maintain its relevance.
     to different optimizations and transformations.
 </p>
 
+<h2>Benchmarks</h2>
+The complete list of benchmarks in the Koala suite is as follows:
+
+  <table id="benchmarks">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>analytics</code></td><td>Real-world network logs filtering to extract and summarize key events.</td></tr>
+      <tr><td><code>bio</code></td><td>Genomic and transcriptomic analysis using population and RNA-seq data.</td></tr>
+      <tr><td><code>ci-cd</code></td><td>Open-source software project build and test.</td></tr>
+      <tr><td><code>covid</code></td><td>Analysis of public transit activity during the COVID-19 pandemic.</td></tr>
+      <tr><td><code>file-mod</code></td><td>File compression, encryption, and conversion.</td></tr>
+      <tr><td><code>inference</code></td><td>Media-related inference tasks using large foundation models.</td></tr>
+      <tr><td><code>ml</code></td><td>A full machine learning pipeline using scikit-learn.</td></tr>
+      <tr><td><code>nlp</code></td><td>Book processing using shell-based NLP pipelines from Unix for Poets.</td></tr>
+      <tr><td><code>oneliners</code></td><td>Classic and modern one-liner shell pipelines.</td></tr>
+      <tr><td><code>pkg</code></td><td>AUR package build and npm packages permission inference.</td></tr>
+      <tr><td><code>repl</code></td><td>Security auditing and git development workflow replay.</td></tr>
+      <tr><td><code>unixfun</code></td><td>Text-processing problems from UNIX's 50-year anniversary.</td></tr>
+      <tr><td><code>weather</code></td><td>Computes and visualizes historical weather statistics.</td></tr>
+      <tr><td><code>web-search</code></td><td>Implements crawling, indexing, and querying of Wikipedia data.</td></tr>
+    </tbody>
+  </table>
+
+
 <h2>Quick Setup</h2>
 <p>Koala can be obtained using the following ways:</p>
 <ul>
-    <li>Run <code>curl up.kben.sh | sh</code> from your terminal,</li>
+    <li>Run <code>curl up.kben.sh | sh</code> from your terminal, or</li>
     <li><a href="https://github.com/kbensh/koala"> Clone the repo</a> and run
-        <code>./setup.sh</code>,</li>
+        <code>./main.sh --setup</code>, or</li>
     <li>Fetch a Docker container by running <code>docker pull ghcr.io/kbensh/koala:latest</code>, or</li>
     <li>Build a Docker container <a
             href="https://github.com/kbensh/koala?tab=readme-ov-file#environment--setup-notes">from
@@ -76,23 +105,3 @@ This suite evolves to maintain its relevance.
         </ul>
     </div>
 </div>
-
-<script>
-  const tabs = document.querySelectorAll('.tab');
-  const codeBlocks = document.querySelectorAll('.code-block');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.target;
-
-      // Switch active tab
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      // Show correct code block
-      codeBlocks.forEach(block => {
-        block.classList.toggle('active', block.dataset.tab === target);
-      });
-    });
-  });
-</script>
