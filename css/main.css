@@ -20,7 +20,7 @@ body {
 }
 
 img.logo {
-  max-width:110%;
+  max-width: 200px;
   text-align:left;
   display: block;
   margin-left: 0px;
@@ -127,8 +127,8 @@ h1 {
 }
 
 .top-version {
-  font-size: 1.1em;
-  margin-left: 150px;
+  font-size: 2em;
+  margin-left: 180px;
 }
 
 .subtitle {
