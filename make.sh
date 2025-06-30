@@ -10,6 +10,7 @@ cp -r img "$build"
 cp -r css "$build"
 cp -r js "$build"
 cp -r txt "$build"
+cp favicon.ico "$build"
 
 updated="$(LANG=en_us_88591; date +'%R'; date +'%m/%d/%Y')"
 version=$(curl -s "https://api.github.com/repos/$repo/tags" | jq -r '.[0].name' || echo "0.1"); [ "$version" = "null" ] && version="0.1"
