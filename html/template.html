@@ -69,19 +69,14 @@ $body$
 
 </body>
 
-</html>
+<script>
+document.querySelectorAll('a[href]').forEach(function(link) {
+  link.setAttribute('target', '_blank');
+  link.setAttribute('rel', 'noopener noreferrer');
+});
+</script>
 
 <script src="./js/issues.js"></script>
 <script src="./js/data.js"></script>
 
-<script>
-  const links = document.querySelectorAll('.navigation a');
-  const current = window.location.pathname.split('/').pop() || 'index.html';
-
-  links.forEach(link => {
-    const href = link.getAttribute('href').split('/').pop();
-    if (href === current || (href === 'index' && current === '')) {
-      link.classList.add('self');
-    }
-  });
-</script>
+</html>
