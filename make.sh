@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -x
 
 build="build"
 template="html/template.html"
