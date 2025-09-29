@@ -1,5 +1,9 @@
 /* General structure */
 
+:root {
+  --main-color: black;
+}
+
 body {
     margin: 0 auto;
     padding: 0 15px;
@@ -20,7 +24,7 @@ body {
 }
 
 img.logo {
-  max-width: 200px;
+  max-width: 100px;
   text-align:left;
   display: block;
   margin-left: 0px;
@@ -44,7 +48,7 @@ figure {
 figcaption {
   text-align: left;
   margin:20px;
-  border-left: 2px solid #cb4b16;
+  border-left: 2px solid var(--main-color);
   padding-left: 5px;
 }
 
@@ -83,7 +87,7 @@ header {
 }
 
 a.self, a.self:hover, a.self:focus {
-  color: #cb4b16;
+  color: var(--main-color);
   overflow: hidden;
 }
 
@@ -121,13 +125,8 @@ h1 {
   line-height: 1.1;
   margin: 0;
   padding: 0;
-  border-left: 4px solid #cb4b16;
+  border-left: 4px solid var(--main-color);
   padding-left: 12px;
-}
-
-.top-version {
-  font-size: 2em;
-  margin-left: 180px;
 }
 
 .subtitle {
@@ -146,7 +145,7 @@ h2.author {
     margin-top: -40px; /*if attached under title, lift to cover empty space*/
     margin-bottom: 40px; /*leave some space under*/
     text-align: left;
-    border-left: 6px solid #cb4b16;
+    border-left: 6px solid var(--main-color);
     padding: .2em .5em;
 }
 
@@ -159,7 +158,7 @@ h3.extras {
   margin-bottom: 40px; /*leave some space under*/
   text-align: left;
   font-style: italic;
-  border-left: 6px solid #cb4b16;
+  border-left: 6px solid var(--main-color);
   padding: .2em .5em;
 }
 
@@ -257,13 +256,13 @@ footer table td.foot, table th.foot {
 }
 
 pre.wip {
-    background: #cb4b16;
+    background: var(--main-color);
 	border-radius: 10px;
 }
 
 pre.wip code {
     color: white;
-    background: #cb4b16;
+    background: var(--main-color);
 }
 
 blockquote {
@@ -274,7 +273,7 @@ blockquote {
 	margin-top: 10px;
 	margin-bottom: 20px;
   border-right: 0;
-  border-left: 2px solid #cb4b16;
+  border-left: 2px solid var(--main-color);
   quotes: "\201C""\201D""\2018""\2019";
   padding: 0;
   padding-left: 14px;
@@ -350,14 +349,14 @@ blockquote blockquote p:last-child{
 
 a {
     text-decoration: none;
-    color: #cb4b16;
+    color: var(--main-color);
     background: transparent;
 }
 a:hover, a:focus {
     text-decoration: underline;
 }
 a:focus {
-    outline: thin dotted #cb4b16;
+    outline: thin dotted var(--main-color);
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px;
 }
@@ -387,7 +386,7 @@ pre {
 
 code {
     padding: 0 2px;
-    color: #8D1A38;
+    color: #8d1a38;
     white-space: pre-wrap;
     background-color: #f9f2f4;
 }
@@ -550,7 +549,7 @@ table {
 caption {
     text-align: left;
     margin:20px;
-    border-left: 2px solid #cb4b16;
+    border-left: 2px solid var(--main-color);
     padding-left: 5px;
     caption-side: bottom;
 }
