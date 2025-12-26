@@ -348,7 +348,7 @@ blockquote blockquote p:last-child{
 /* Links layout */
 
 a {
-    text-decoration: none;
+    text-decoration: bold;
     color: var(--main-color);
     background: transparent;
 }
@@ -832,11 +832,23 @@ th {
 }
 
 .references {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .references img {
   height: 2em;
   width: auto;
   vertical-align: middle;
   padding-right: 0.5em;
+}
+
+a.paper {
+  border-radius: 1px;
+  background: url(../img/paper.png) no-repeat left center;
+  padding: 3px 3px 3px 24px;
+}
+
+a.source {
+  border-radius: 1px;
+  background: url(../img/code.png) no-repeat left center;
+  padding: 3px 3px 3px 24px;
 }
