@@ -6,76 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <title>$title$</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" data-manual></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bibtex.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 </head>
 
 <body>
     <header>
         <div class="column">
-            <h1 class="title">
+            <h1 class="title" style="display: flex; align-items: center; flex-wrap: wrap;">
 <img src="./img/logo.svg" alt="Koala Logo" class="logo">
-        <div class="subtitle">The Koala benchmark suite for the Shell</div>
-        </h1>
-        <div class="navigation">
-
-<div class="image-grid">
-  <div class="row">
-    <img src="./img/usenixbadges-available.svg" alt="USENIX Available Badge">
-    <img src="./img/usenixbadges-functional.svg" alt="USENIX Functional Badge">
-    <img src="./img/usenixbadges-reproduced.svg" alt="USENIX Reproduced Badge">
-  </div>
-  <div class="row centered universities">
-    <a href="https://systems.cs.brown.edu/">
-      <img src="./img/brown.png" alt="Brown University Logo">
-    </a>
-    <a href="https://www.stevens.edu/">
-      <img src="./img/stevens.jpg" alt="Stevens Institute of Technology Logo">
-    </a>
-    <a href="https://www.ucla.edu/">
-      <img src="./img/ucla.jpg" alt="UCLA Logo">
-    </a>
-  </div>
-
-    <div class="row references">
-        <a class="source" href="https://github.com/kbensh/koala">Source</a>
-        <a class="paper" href="https://nikos.vasilak.is/p/koala:atc:2025.pdf">Paper</a>
-    </div>
-</div>
-
+        <div style="display: flex; align-items: baseline; gap: 2rem;">
+            <div class="subtitle" style="margin-top: 0;">The Koala benchmark suite for the Shell</div>
+            <div class="navigation">
+                <div class="row references" style="display: flex; gap: 1rem; font-size: 16px; font-weight: 500;">
+                    <a class="source btn-primary" href="https://github.com/kbensh/koala">Source</a>
+                    <a class="paper btn-secondary" href="https://nikos.vasilak.is/p/koala:atc:2025.pdf">Paper</a>
+                    <span class="gh-stat" id="gh-stars" hidden></span><span class="gh-stat" id="gh-forks" hidden></span>
+                </div>
+            </div>
         </div>
-</div>
+        </h1>
+        </div>
 </header>
 
 <main>
 $body$
     </main>
 
-    <footer>
-        <table border="0" class="foot">
-            <tr class="foot">
-                <td align="left" class="foot">
-                    version <a href="http://github.com/kbensh/koala/releases/tag/v$version$">$version$</a> | revision <a
-                        href="http://github.com/kbensh/koala"> $revision$ </a> | $commitmsg$ | Updated: $updated$
-                </td>
-            </tr>
-            <tr class="foot">
-                <td align="left" class="foot">
-                    Copyright Koala Project 2025.
-                </td>
-            </tr>
-        </table>
+    <footer class="site-footer">
+        <img src="./img/logo.svg" alt="Koala Logo" class="footer-logo">
+        <div class="footer-text">
+            Find out more about Shell research by <a href="https://atlas.cs.brown.edu/">Atlas</a> @ Brown University.
+        </div>
+        <div class="footer-meta">
+            <span>v$version$</span>
+            <span>·</span>
+            <span>built $updated$</span>
+            <span>·</span>
+            <a href="#" class="to-top">back to top ↑</a>
+        </div>
     </footer>
 
 </body>
 
 <script>
 document.querySelectorAll('a[href]').forEach(function(link) {
+  var href = link.getAttribute('href') || '';
+  if (href.charAt(0) === '#' || href.indexOf('javascript:') === 0) return;
   link.setAttribute('target', '_blank');
   link.setAttribute('rel', 'noopener noreferrer');
+});
+document.querySelectorAll('.to-top').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });
 </script>
 
 <script src="./js/issues.js"></script>
 <script src="./js/data.js"></script>
+<script src="./js/copy.js"></script>
+<script src="./js/repo-stats.js"></script>
 
 </html>
