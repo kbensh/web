@@ -980,16 +980,18 @@ pre:hover .copy-btn,
 .paper-thumb {
   flex: 0 0 auto;
   display: block;
+  margin: 0;
 }
 .paper-thumb img {
-  width: 180px;
+  display: block;
+  width: 160px;
   height: auto;
+  margin: 0;
+  max-width: none;
   border: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   border-radius: 2px;
   transition: box-shadow 0.15s ease, transform 0.15s ease;
-  margin: 0;
-  max-width: none;
 }
 .paper-thumb:hover img {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -1000,7 +1002,7 @@ pre:hover .copy-btn,
     flex-direction: column;
     align-items: center;
   }
-  .paper-thumb img { width: 160px; }
+  .paper-thumb img { width: 140px; }
 }
 
 /* Papers Using Koala list */
