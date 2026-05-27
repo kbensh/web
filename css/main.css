@@ -2,6 +2,7 @@
 
 :root {
   --main-color: black;
+  --link-color: #8d1a38;
 }
 
 body {
@@ -348,12 +349,36 @@ blockquote blockquote p:last-child{
 /* Links layout */
 
 a {
-    text-decoration: bold;
-    color: var(--main-color);
+    color: var(--link-color);
     background: transparent;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    text-decoration-color: rgba(141, 26, 56, 0.35);
+    transition: text-decoration-color 0.15s ease;
 }
 a:hover, a:focus {
     text-decoration: underline;
+    text-decoration-color: var(--link-color);
+}
+
+/* Exemptions: links that should stay non-colored, non-underlined */
+h1.title a,
+.references a.source,
+.references a.paper,
+.paper-thumb,
+.site-footer a,
+.gh-stat,
+.copy-btn {
+    color: inherit;
+    text-decoration: none;
+}
+h1.title a:hover,
+.references a.source:hover,
+.references a.paper:hover,
+.paper-thumb:hover,
+.site-footer a:hover {
+    text-decoration: none;
 }
 a:focus {
     outline: thin dotted var(--main-color);
@@ -581,6 +606,10 @@ pre.sourceCode.bibtex {
     font-size: 13px;
     line-height: 1.45;
     padding: 16px;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    overflow-x: auto;
 }
 @media (min-width: 1170px) {
     pre.sourceCode.bibtex {
@@ -848,16 +877,35 @@ th {
   padding-right: 0.5em;
 }
 
-a.paper {
-  border-radius: 1px;
-  background: url(../img/paper.png) no-repeat left center;
-  padding: 3px 3px 3px 24px;
-}
-
+a.paper,
 a.source {
-  border-radius: 1px;
-  background: url(../img/code.png) no-repeat left center;
-  padding: 3px 3px 3px 24px;
+  display: inline-flex;
+  align-items: center;
+  height: 34px;
+  padding: 0 14px 0 36px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 16px 16px;
+  color: var(--main-color);
+  text-decoration: none;
+  transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+a.paper {
+  background-image: url(../img/paper.png);
+}
+a.source {
+  background-image: url(../img/code.png);
+}
+a.paper:hover,
+a.source:hover {
+  border-color: var(--main-color);
+  background-color: #f7f7f7;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-decoration: none;
 }
 
 /* Live GitHub stats shown alongside Source/Paper */
@@ -914,6 +962,59 @@ pre:hover .copy-btn,
   opacity: 1;
   color: #2a7a2a;
   border-color: #2a7a2a;
+}
+
+/* Citation row: paper thumbnail next to BibTeX block */
+.citation-row {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 20px 0;
+}
+.citation-row > pre,
+.citation-row > div.sourceCode {
+  flex: 1 1 auto;
+  margin: 0;
+  min-width: 0;
+}
+.paper-thumb {
+  flex: 0 0 auto;
+  display: block;
+}
+.paper-thumb img {
+  width: 180px;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 2px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  margin: 0;
+  max-width: none;
+}
+.paper-thumb:hover img {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  .citation-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .paper-thumb img { width: 160px; }
+}
+
+/* Papers Using Koala list */
+.paper-list {
+  margin: 12px 0 24px 0;
+}
+.paper-list li {
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.paper-venue {
+  color: #888;
+  font-style: italic;
+  font-size: 0.92em;
 }
 
 /* Footer */
