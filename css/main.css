@@ -351,10 +351,9 @@ blockquote blockquote p:last-child{
 a {
     color: var(--link-color);
     background: transparent;
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
-    text-decoration-color: rgba(141, 26, 56, 0.35);
     transition: text-decoration-color 0.15s ease;
 }
 a:hover, a:focus {
