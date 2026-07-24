@@ -39,4 +39,4 @@ buildthing() {
 
 buildthing "html/index.html" "$build/index.html"
 
-echo "$(date)": "Built website!"
+echo "$(date)": "Built website! Index page is at $build/index.html" 
